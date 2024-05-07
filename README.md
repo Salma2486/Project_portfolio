@@ -37,7 +37,7 @@ Table Game_Player: A junction table that links the Game and Player tables, stori
 game_id: Foreign key referencing Game.game_id.
 player_id: Foreign key referencing Player.player_id.
 
-![Alt Text](Capture1.png)
+![Alt Text](https://github.com/Salma2486/Project_portfolio/blob/main/Capture1.PNG?raw=true.png)
 
 
 User Stories:
@@ -49,4 +49,4 @@ As a player, I want to see a game over screen when the snake hits the boundary o
 
 
 Mockups:
-![Alt Text](w2enIILhS3yBEvwaD7VmEQ.png)
+![Alt Text](w2enhttps://github.com/Salma2486/Project_portfolio/blob/main/w2enIILhS3yBEvwaD7VmEQ.jpg?raw=trueIILhS3yBEvwaD7VmEQ.png)
