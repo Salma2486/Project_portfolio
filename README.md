@@ -21,7 +21,7 @@ User Input -> Control Handler -> Data Management -> Game Logic -> Rendering
 Engine -> User Interface
 
 
-![Alt Text](Capture.png)
+![Alt Text](https://github.com/Salma2486/Project_portfolio/blob/main/Capture.PNG?raw=true.png)
 
 
 
