@@ -49,4 +49,4 @@ As a player, I want to see a game over screen when the snake hits the boundary o
 
 
 Mockups:
-![Alt Text](w2enhttps://github.com/Salma2486/Project_portfolio/blob/main/w2enIILhS3yBEvwaD7VmEQ.jpg?raw=trueIILhS3yBEvwaD7VmEQ.png)
+![Alt Text](https://github.com/Salma2486/Project_portfolio/blob/main/w2enIILhS3yBEvwaD7VmEQ.jpg?raw=true.png)
