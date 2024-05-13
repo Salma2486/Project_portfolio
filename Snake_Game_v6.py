@@ -4,8 +4,9 @@ from pygame.math import Vector2
 class SNAKE:
     def __init__(self):
         self.body = [Vector2(5, 10), Vector2(4, 10), Vector2(3, 10)]
-        self.direction = Vector2(0, 0)
+        self.direction = Vector2(1, 0)
         self.new_block = False
+        
 
         self.head_up = pygame.image.load("head_up.png").convert_alpha()
         self.head_down = pygame.image.load("head_down.png").convert_alpha()
@@ -38,13 +39,16 @@ class SNAKE:
         self.body_tr = pygame.image.load("top_right.png").convert_alpha()
         self.body_br = pygame.image.load("down_right.png").convert_alpha()
 
-
+       
         self.body_tl = pygame.transform.scale(self.body_tl, (cell_size, cell_size))
         self.body_bl = pygame.transform.scale(self.body_bl, (cell_size, cell_size))
         self.body_tr = pygame.transform.scale(self.body_tr, (cell_size, cell_size))
         self.body_br = pygame.transform.scale(self.body_br, (cell_size, cell_size))
 
+
         self.crunch_sound = pygame.mixer.Sound('crunch_2.mp3')
+        self.head = self.head_left
+        self.tail = self.tail_right
     
 
     def draw_snake(self):
@@ -111,7 +115,7 @@ class SNAKE:
 
     def reset(self):
         self.body = [Vector2(5, 10), Vector2(4, 10), Vector2(3, 10)]
-        self.direction = Vector2(0, 0)
+        self.direction = Vector2(1, 0)
 
     def play_crunch_sound(self):
         self.crunch_sound.play()
@@ -158,17 +162,19 @@ class MAIN:
                 self.fruit.randomize()
 
     def check_fail(self):
+        if self.game_state == "game_over":
+            return
         if not 0 <= self.snake.body[0].x < cell_number or not 0 <= self.snake.body[0].y < cell_number:
             self.game_over()
 
         for block in self.snake.body[1:]:
             if block == self.snake.body[0]:
-
-                self.game_over()
+                if self.game_state == "playing":
+                    self.game_over()
 
     def game_over(self):
-
         self.snake.reset()
+        self.game_state = "game_over"
         
         
 
@@ -234,8 +240,7 @@ def draw_start_menu(screen):
 
 
 pygame.init()
-pygame.mixer.init()
-pygame.font.init()
+
 cell_size = 34
 cell_number = 20
 screen_size = (cell_size * cell_number, cell_size * cell_number)
